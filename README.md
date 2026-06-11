@@ -3,16 +3,7 @@
 **Платформа:** rteam.kz  
 **Категория:** Forensics  
 **Файл:** `Security-filtered.evtx` (Windows Security Event Log)
- Find and write down: Account name which were logged in to this host. Logon types of logon. Time Failed attempts and account name which try to logon.
 
-Answer for following questions:
-
-What is the Client Name of the system used to authenticate via the tdungan account (likely his home computer hostname)?
-What suspicious account is recorded in RDP session reconnect events?
-On what days did the suspicious connections occur?
-What Client Name and IP-address were in use for these connections? (4778)
-There are hundreds of administrator authentications on this system, but using the custom column for 4672 events makes it feasible to quickly audit them. What domain accounts have authenticated to this system with admin-level privileges?
-@filinessa
 ---
  
 ## Инструменты
