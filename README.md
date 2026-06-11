@@ -1,6 +1,6 @@
 # Task 1 — Find Abnormal Logon (Forensics)
  
-**Платформа:** ctf.rteam.kz  
+**Платформа:** rteam.kz  
 **Категория:** Forensics  
 **Файл:** `Security-filtered.evtx` (Windows Security Event Log)
  
