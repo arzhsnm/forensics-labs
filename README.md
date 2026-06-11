@@ -86,7 +86,7 @@ grep '"EventID":4625' sec.jsonl | grep -o '"TargetUserName":"[^"]*"' | sort | un
 ---
  
 ## Ответы на вопросы
- 
+What is the Client Name of the system used to authenticate via the tdungan account (likely his home computer hostname)?
 ### 1. Client Name для аккаунта tdungan
  
 ```bash
@@ -98,7 +98,8 @@ grep -i "tdungan" sec.jsonl | grep -i "WorkstationName\|IpAddress" | head -20
 Аккаунт `tdungan` подключался с компьютера `DUNGANATOR` по IP `172.16.30.8` и `172.16.30.3` через RDP (LogonType 10).
  
 ---
- 
+What suspicious account is recorded in RDP session reconnect events?
+
 ### 2. Подозрительный аккаунт в событиях RDP reconnect (Event 4778)
  
 ```bash
@@ -116,7 +117,7 @@ grep '"EventID":4778' sec.jsonl | grep -o '"AccountName":"[^"]*"' | sort | uniq 
 Аккаунт `wacsvc` маскируется под системный сервис (Windows Admin Center Service), но используется для интерактивных RDP-сессий — это подозрительно.
  
 ---
- 
+On what days did the suspicious connections occur?
 ### 3. Дни подозрительных подключений
  
 ```bash
@@ -137,7 +138,7 @@ grep '"EventID":4778' sec.jsonl | grep "wacsvc" | grep -o '"SystemTime":"[^"]*"'
 **Ответ: `2023-01-18` и `2023-01-19`**
  
 ---
- 
+What Client Name and IP-address were in use for these connections? (4778)
 ### 4. Client Name и IP-адрес (Event 4778)
  
 ```bash
@@ -153,7 +154,7 @@ grep '"EventID":4778' sec.jsonl | grep -o '"ClientName":"[^"]*"\|"ClientAddress"
 **Ответ: ClientName = `phoenix`, IP = `172.16.6.18`**
  
 ---
- 
+There are hundreds of administrator authentications on this system, but using the custom column for 4672 events makes it feasible to quickly audit them. What domain accounts have authenticated to this system with admin-level privileges?
 ### 5. Доменные аккаунты с правами администратора (Event 4672)
  
 ```bash
