@@ -168,7 +168,6 @@ grep '"EventID":4672' sec.jsonl | grep -o '"SubjectUserName":"[^"]*"' | sort | u
   9  "SubjectUserName":"wacsvc"
 ```
  
-**Ответ: `rsydow-a` и `cbarton-a`**
  
 Суффикс `-a` означает admin account — стандартная практика в корпоративных доменах для отдельных привилегированных аккаунтов.
  
